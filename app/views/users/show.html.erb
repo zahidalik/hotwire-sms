@@ -1,0 +1,29 @@
+<div class="container">
+  <%= turbo_stream_from @user %>
+  <%= turbo_frame_tag "user" do%>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.full_name %>
+    </p>
+
+    <p>
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+      <%= link_to 'Back', users_path, "data-turbo-frame": "_top" %>
+    </p>
+  <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col s6">
+      <%= turbo_stream_from "schools" %>
+      <%= turbo_frame_tag "schools" do %>
+        <% @user_schools.each do |school| %>
+          <%= render "schools/school", school: school %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col s6 offset-s6">
+      <%= turbo_frame_tag "new_user_school", src: new_user_school_path(@user), target: "_top" %>
+    </div>
+  </div>
+</div>

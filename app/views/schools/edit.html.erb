@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "user_school" do %>
+  <h3>Editing user school</h3>
+  <%= render "scools/form", user_school: user_school %>
+  <%= link_to 'Back', user_path(user_school.user), "data-turbo-frame": "_top" %>
+<% end %>

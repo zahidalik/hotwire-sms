@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "new_user", target: "_top" do %>
+  <h5>New User</h5>
+  <%= render "users/form" %>
+<% end %>
+
+<%= link_to 'Back', users_path %>

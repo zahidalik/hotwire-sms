@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "user" do%>
+  <h5>Editing User</h5>
+  <%= render 'form', user: @user %>
+<% end %>
+
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

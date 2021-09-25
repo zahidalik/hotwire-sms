@@ -1,0 +1,20 @@
+<%= turbo_frame_tag dom_id(school) do %>
+  <p>
+    <strong>Name:</strong>
+    <%= school.name %>
+  </p>
+
+  <p>
+    <strong>Head Master:</strong>
+    <%= school.head_master %>
+  </p>
+
+  <p>
+    <strong>Academic Master:</strong>
+    <%= school.academic_head %>
+  </p>
+
+  <p>
+    <%= link_to 'Edit', edit_school_path(school) %>
+  </p>
+<% end %>

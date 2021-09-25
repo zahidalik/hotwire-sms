@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-content">
+    <%= form_with(model: [ @user, @school]) do |form| %>
+      <% if @school.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@school.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @school.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :head_master %>
+        <%= form.text_field :head_master %>
+      </div>
+
+      <div class="field">
+        <%= form.label :academic_head %>
+        <%= form.text_field :academic_head %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit class: "waves-effect waves-light btn"%>
+      </div>
+    <% end %>
+  </div>
+</div>
